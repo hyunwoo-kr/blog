@@ -1,0 +1,7 @@
+[submodule "themes/notepadium"]
+	path = themes/notepadium
+	url = git@github.com:hyunwoo-kr/hugo-notepadium.git
+[submodule "public"]
+	path = public
+	url = git@github.com:hyunwoo-kr/hyunwoo-kr.github.io.git
+	branch = master

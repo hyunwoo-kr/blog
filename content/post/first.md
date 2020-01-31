@@ -4,7 +4,7 @@ date = 2020-01-31T13:17:14+09:00
 lastmod = 2020-01-31T13:17:14+09:00
 tags = ["TASK"]
 categories = ["PLAN"]
-draft = true
+draft = false
 author = "hyunwoo"
 +++
 

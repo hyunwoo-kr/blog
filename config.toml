@@ -3,11 +3,9 @@ title = "현우의 기술 블로그"
 theme = "notepadium"
 copyright = "©2020 HYUNWOO."
 
-languageCode = "ko"  # for the RSS generation
-defaultContentLanguage = "ko"
-
+languageCode = "en"  # for the RSS generation
+defaultContentLanguage = "en"
 hasCJKLanguage = true
-
 enableRobotsTXT = true
 
 # Enable Disqus

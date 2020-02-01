@@ -33,7 +33,7 @@ paginate = 7
   name = "Hyunwoo Gwak"
   bio = "매일 조금씩 꾸준히 글쓰기"
   job = "Developer"
-  location = "Korea"
+  location = "Seoul, South Korea"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   gravatarEmail = "khw8309@gmail.com"
   # Your profile picture

@@ -1,5 +1,5 @@
 ---
-title: "[tips] TRON - Python API를 사용한 송금"
+title: "TRON - Python API를 사용한 송금"
 date: 2020-02-03T17:51:02+09:00
 categories:
 - tips

@@ -7,7 +7,7 @@ tags:
 - tron
 - tronapi
 - tron-api-python
-- self.tron.private_key
+- self.tron.private_key error
 keywords:
 - tech
 drift : true

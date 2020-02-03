@@ -7,6 +7,7 @@ tags:
 - tron
 - tronapi
 - tron-api-python
+- self.tron.private_key
 keywords:
 - tech
 drift : true

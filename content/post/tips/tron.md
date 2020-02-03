@@ -105,5 +105,15 @@ send = tron.trx.send_transaction('to', 1)
 print(send)
 ```
 
+## 송금결과 Console Print
+```
+ {'result': True, 'transaction': {'visible': False, 'txID': '12db7eb293e11b3eec114cacc55bc05b8d6e1feb4f9c1d9f47bbbe3d1aabd504', 'raw_data': {'contract': [{'parameter': {'value': {'amount': 3000000000, 'asset_name': '31303030303538', 'owner_address': '410528eb23a4a716d1647372c6ba681f204a8a3c2a', 'to_address': '419f96f2fba41f70be63d0a4fce94360896058ccee'}, 'type_url': 'type.googleapis.com/protocol.TransferAssetContract'}, 'type': 'TransferAssetContract'}], 'ref_block_bytes': '0f92', 'ref_block_hash': '7f8f59b2d002667c', 'expiration': 1580722314000, 'timestamp': 1580722256591}, 'raw_data_hex': '0a020f9222087f8f59b2d002667c4090b691d3802e5a77080212730a32747970652e676f6f676c65617069732e636f6d2f70726f746f636f6c2e5472616e736665724173736574436f6e7472616374123d0a07313030303035381215410528eb23a4a716d1647372c6ba681f204a8a3c2a1a15419f96f2fba41f70be63d0a4fce94360896058ccee2080bcc1960b70cff58dd3802e', 'signature': ['ea0dd68f98fe5f0d4225d8835d15be6db4ccd432dd2ad8103c49d9cc35374e1f102400b9b6f2bb6f832d088858aca989f3bb640ffd0f2e34a5e2b4fc0e44e2661b']}}
+ ```
+### [테스트 넷 링크](https://shasta.tronscan.org/#/transaction/12db7eb293e11b3eec114cacc55bc05b8d6e1feb4f9c1d9f47bbbe3d1aabd504)
+![송금결과](/img/tips/tron-01.PNG)
+
 [결론]
- - 해결하고 보니, TRON Python API는 뭔가 만들다 만 느낌이 든다. 
+ - 해결하고 보니 내가 API를 잘 못 이해 했거나
+ - TRON Python API를 만들다 만 느낌이 든다.
+ - 예시가 있는건 좋은데 어떤 값이 들어가야 되는지가 없어서 없었다
+ - 내가 만들 때는 이런거 감안해서 만들자~ 

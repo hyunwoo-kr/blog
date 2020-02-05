@@ -19,8 +19,8 @@ Tron Python API 모듈을 사용해서 TRC10 '송금'을 하려면 어떻게 해
 - [TRON Developers](https://developers.tron.network/)
 - [TRC10 이란?](https://developers.tron.network/docs/trc10-token)
 
-GitHub의 [Python API](https://github.com/iexbase/tron-api-python/blob/master/examples/send-transaction.py)를 그대로 따라하다 보면 아래와 같은 error가 발생한다.
-## Github에서 제공하는 TRC10  송금
+GitHub의 [Python API](https://github.com/iexbase/tron-api-python/blob/master/examples/send-transaction.py)를 기본으로 하여 TRC10 토큰 송금을 구현해 보니 아래와 같은 error가 발생한다.
+## Github에서 제공하는 TRC 송금
 
 ```python
 from tronapi import Tron
@@ -46,8 +46,32 @@ print(send)
 
 
 
+## 위 제공하는 소스에서 TRC10 토큰을 송신 하려면 아래와 같이 하면 될 거라 생각 했음
 
-## 오류 내용
+```python
+from tronapi import Tron
+from tronapi import HttpProvider
+
+full_node = HttpProvider('https://api.trongrid.io')
+solidity_node = HttpProvider('https://api.trongrid.io')
+event_server = HttpProvider('https://api.trongrid.io')
+
+tron = Tron(full_node=full_node,
+            solidity_node=solidity_node,
+            event_server=event_server)
+
+
+tron.private_key = 'private_key'
+tron.default_address = 'default address'
+
+# added message
+send = tron.trx.send_token('to', 1, 'token_id')
+
+print(send)
+```
+
+
+## 하지만.... 오류 발생.
 ```
 Traceback (most recent call last):
   .....
@@ -100,7 +124,7 @@ tron.default_address = 'default address'
 tron.trx.tron.private_key = 'private_key'
 
 # added message
-send = tron.trx.send_transaction('to', 1)
+send = tron.trx.send_token('to', 1, 'token_id')
 
 print(send)
 ```
@@ -113,7 +137,6 @@ print(send)
 ![송금결과](/img/tips/tron-01.PNG)
 
 [결론]
+ - TRC 송금 예시는 있었고, TRC10 송금 예시가 없길래 임의로 분석해서 진행한 거 였는데
  - 해결하고 보니 내가 API를 잘 못 이해 했거나
  - TRON Python API를 만들다 만 느낌이 든다.
- - 예시가 있는건 좋은데 어떤 값이 들어가야 되는지가 없어서 없었다
- - 내가 만들 때는 이런거 감안해서 만들자~ 

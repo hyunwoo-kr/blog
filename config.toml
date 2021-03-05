@@ -12,8 +12,8 @@
 # For developpers, if you modify this theme, put your images in `source/images` folder and
 # use grunt task `build` to synchronize assets
 baseURL = "https://hyunwoo-kr.github.io/"
-languageCode = "ko-kr"
-defaultContentLanguage = "ko-kr"
+languageCode = "en-us"
+defaultContentLanguage = "en-us"
 title = "현우의 기술 블로그"
 theme = "tranquilpeak"
 # disqusShortname = "hugo-tranquilpeak-theme"

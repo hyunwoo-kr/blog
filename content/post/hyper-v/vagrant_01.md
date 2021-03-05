@@ -15,6 +15,7 @@ author: "hyunwoo"
 로컬 PC로 가상머신을 커맨드라인 명령을 통해 진행 할 수 있을까?
 <!--more-->
 vagrant 를 사용하여, 한 줄 한 줄 명령어를 통해 CentOS7을 설치 한다.
+
 [목표]
 - Hyper-V Nat 네트워크 구성을 활용하여
 - CentOS7을 Hyper-V에 설치 해 보자

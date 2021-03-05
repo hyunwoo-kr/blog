@@ -38,3 +38,36 @@ git add .
 git commit -m "커밋메시지" .
 git push origin master
 ```
+
+## remote와 Submodule 설정
+
+> blog remote 연결
+```
+git remote add origin git@github.com:hyunwoo-kr/blog.git
+```
+
+> submodule 연결
+
+```
+git submodule add -b master git@github.com:hyunwoo-kr/hyunwoo-kr.github.io.git public
+```
+
+## git submodule 삭제방법
+
+> 모듈 deinit 하기.
+
+```
+git submodule deinit -f public
+```
+
+> .git/modules/public 삭제
+
+```
+rm -rf .git/modules/public
+```
+
+> 해당 폴더 삭제
+
+```
+git rm -f public
+```

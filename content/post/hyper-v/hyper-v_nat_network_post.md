@@ -33,7 +33,9 @@ Windows 10, Hyper-v 를 사용할 때 Network 구성을 정형화 할 수 있을
  - NAT 게이트웨이를 구성
  - vagarnt로 CentOS 7 Server를 생성하고 네트워크 연결하기
 
-> [주의] 관리자 권한으로 PowerShell 콘솔 오픈 후 명령을 실행해야 함.
+{{< alert danger >}}
+관리자 권한으로 PowerShell 콘솔 오픈 후 아래 명령을 실행해야 함.
+{{< /alert >}}
 
 > 내부(Internal) 스위치 생성
 

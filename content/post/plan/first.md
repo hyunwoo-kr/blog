@@ -3,11 +3,9 @@ title: "새해 목표"
 date: 2020-01-31T13:17:14+09:00
 categories:
 - PLAN
-- 계획
 tags:
-- TASK
-keywords:
-- tech
+- plan
+
 #thumbnailImage: //example.com/image.jpg
 author: "hyunwoo"
 ---

@@ -22,6 +22,9 @@ author: "hyunwoo"
  - [Windows10 Hyper-V Nat Network 구성하기](/2021/03/windows10-hyper-v-nat-network-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/)
  - Vagrant 설치 및 사용법 숙지
 
+[소스]
+
+
 ## Vagrant 로 Hyper-v에 Centos7 프로비저닝하기
 
 {{< alert danger no-icon >}}
@@ -71,6 +74,7 @@ vagrant box add centos/7 file:///Q:\vs_work\infra\vagrant_box\CentOS-7-x86_64-Va
 
  - Vagrantfile: 베이그런트 이미지 설정파일
  - configure-static-ip.sh: 사설 고정IP 할당 스크립트
+ - .vimrc: vim 설정파일
 
 ### Step5 Vagrantfile 생성
 
@@ -82,7 +86,7 @@ vagrant box add centos/7 file:///Q:\vs_work\infra\vagrant_box\CentOS-7-x86_64-Va
 Vagrant.configure("2") do |config|
     config.vm.box = "centos/7"
     config.vm.box_check_update = true
-    config.vm.provider "hyperv"
+
     config.vm.network "public_network", auto_config: false,  bridge: "dmz"
     config.vm.hostname = "dzm-web1"
 
@@ -99,7 +103,13 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", inline: <<-SHELL
         sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
         sed -i 's/#PermitRootLogin yes/PermitRootLogin yes/g' /etc/ssh/sshd_config
-        sudo su && echo "<비밀번호>" | passwd --stdin root
+        sudo su && echo "<비밀번호>"  | passwd --stdin root
+
+        # systemctl restart sshd
+        # mkdir -p /root/.ssh
+        # chmod -R 700 /root/.ssh
+        # cat /vagrant/scripts/authorized_keys >> /root/.ssh/authorized_keys
+        # chmod 600 /root/.ssh/authorized_keys
     SHELL
 
     config.vm.provision "shell", inline: <<-SHELL
@@ -140,7 +150,7 @@ DNS1=8.8.8.8
 EOF
 ```
 
-### Step7 hyper-v 로  CentOS/7 만들기
+### Step8 hyper-v 로  CentOS/7 만들기
 
 {{< alert danger no-icon>}}
 1) 반드시, PowerShell 관리자 모드
@@ -156,17 +166,68 @@ vagrant up
 ![result_hyperv](/img/hyper-v/vagrant01/result_hyperv.JPG)
 
 
-### Step8 Console 접속
+### Step9 Console 접속
 
 ```
 ssh root@161.100.6.10
 ```
 
-## Step9 OS 운영체제 및 버전확인
+## Step10 OS 운영체제 및 버전확인
 
 ```
 grep . /etc/*-release
 ```
 ![os_version](/img/hyper-v/vagrant01/os_version.JPG)
 
-다음에는 이 CentOS7을 Ansible 을 사용하여 Apache HTTPD 를 설치하는 방법을 정리해야지.
+## Step11 기본 패키지 설치 및 box export
+
+Ingra 구성 테스트시, 매번 같은 패키지를 설치하는게 귀찮아서
+아래 기본 패키지를 설치한 box 를 export 하여 사용 하자
+
+> 기본 패키지 설치
+```
+yum groupinstall -y "Development tools"
+yum -y vim wget curl telnet net-tools bind-utils
+```
+
+> box export  하기
+
+```
+vagrant package --output CentOS-7-x86_64-Vagrant-Hyunwoo.HyperV.box
+```
+
+> export 한 box Add 하기
+
+```
+vagrant box add centos_base/7 ./CentOS-7-x86_64-Vagrant-Hyunwoo.HyperV.box
+```
+![os_version](/img/hyper-v/vagrant01/final_vagrant_box_add.png)
+
+## Step12 만들어 진 VM 삭제
+
+```
+vagrant destory -f
+```
+
+## Step13 Vagrantfile 수정
+
+> config.vm.box 의 값이 centos_base/7 으로 변경 되었고,
+> config.vm.synced_folder의 값이 disabled: true 추가 되었다.
+
+
+
+```
+Vagrant.configure("2") do |config|
+    config.vm.box = "centos_base/7"
+
+    (생략)
+
+    config.vm.synced_folder ".", "/vagrant", disabled: true
+
+    (생략)
+end
+```
+
+{{< alert success no-icon >}}
+수정 후 다시, vagrant up 하여 VM을 생성한다
+{{< /alert >}}

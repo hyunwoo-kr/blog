@@ -112,8 +112,8 @@ TLSv1.2
 TLSv1.3
 ```
 
-## 개선점
+## Ansbie를 사용한 구성 Code 관리
 
 {{< alert info no-icon >}}
- Ansible 을 이용해서 동일한 구성 만드는걸 code 로 관리해 보자
+[Github 프로젝트 링크](https://github.com/hyunwoo-kr/infra/tree/main/2_openssl_compile_on_centos7)
 {{< /alert >}}

@@ -66,16 +66,12 @@ make && make install
 ## openssl-1.1.1g.conf 생성
 
 ```
-vi /etc/ld.so.conf.d/openssl-1.1.1g.conf
-
-# 파일이 열리면 아래 내용 추가 후 저장
-----
-/usr/local/ssl/lib
-----
+echo "/usr/local/ssl/lib" > /etc/ld.so.conf.d/openssl-1.1.1g.conf
 ```
 
 ## shared object (동적 라이브러리 연결) 확인
 
+shared object 에 대한 올바른 링크를 설정하고 캐시를 다시 빌드합니다.
 ```
 ldconfig -v
 ```

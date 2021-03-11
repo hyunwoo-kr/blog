@@ -12,12 +12,12 @@
 # For developpers, if you modify this theme, put your images in `source/images` folder and
 # use grunt task `build` to synchronize assets
 baseURL = "https://hyunwoo-kr.github.io/"
-languageCode = "en-us"
-defaultContentLanguage = "en-us"
+languageCode = "ko-kr"
+defaultContentLanguage = "ko-kr"
 title = "현우의 기술 블로그"
 theme = "tranquilpeak"
 # disqusShortname = "hugo-tranquilpeak-theme"
-googleAnalytics = "UA-157759215-1"
+# googleAnalytics = "UA-157759215-1"
 paginate = 10
 # canonifyurls = true
 

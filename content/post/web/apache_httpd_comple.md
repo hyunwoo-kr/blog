@@ -325,3 +325,9 @@ journalctl -u <서비스이름>
 # -f: follow,
 journalctl -f -u httpd
 ```
+
+## Ansbie를 사용한 구성 Code 관리
+
+{{< alert info no-icon >}}
+[Github 프로젝트 링크](https://github.com/hyunwoo-kr/infra/tree/main/3_apache_http-server_compile_on_centos7)
+{{< /alert >}}

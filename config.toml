@@ -17,7 +17,7 @@ defaultContentLanguage = "ko-kr"
 title = "현우의 기술 블로그"
 theme = "tranquilpeak"
 # disqusShortname = "hugo-tranquilpeak-theme"
-# googleAnalytics = "UA-157759215-1"
+googleAnalytics = "UA-157759215-1"
 paginate = 10
 # canonifyurls = true
 

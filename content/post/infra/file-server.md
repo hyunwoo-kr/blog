@@ -8,8 +8,6 @@ tags:
 - rsync
 - lsyncd
 - File Server 실시간 백업
-keywords:
-- tech
 thumbnailImage: /img/infra/file_server/thumbnail.JPG
 author: "hyunwoo"
 

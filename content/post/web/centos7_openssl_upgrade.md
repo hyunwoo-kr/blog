@@ -2,7 +2,7 @@
 title: "Apache HTTPD 테스트용 Centos7 구성 - 2차"
 date: 2021-03-08T13:41:42+09:00
 categories:
-- hyper-v
+- web
 tags:
 - openssl 1.1.1 컴파일
 keywords:

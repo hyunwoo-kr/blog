@@ -18,7 +18,8 @@ title = "현우의 기술 블로그"
 theme = "tranquilpeak"
 # disqusShortname = "hugo-tranquilpeak-theme"
 googleAnalytics = "UA-157759215-1"
-paginate = 10
+[pagination]
+  pagerSize = 5
 # canonifyurls = true
 
 [permalinks]
@@ -29,20 +30,13 @@ paginate = 10
   category = "categories"
   archive = "archives"
 
-[author]
+[params.author]
   name = "Hyunwoo Gwak"
   bio = "매일 조금씩 꾸준히 글쓰기"
   job = "Developer"
   location = "Seoul, South Korea"
-  # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   gravatarEmail = "khw8309@gmail.com"
-  # Your profile picture
-  # Overwritten by your gravatar image if `author.gravatarEmail` is filled
   picture = "https://s.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=80"
-  # Your Twitter username without the @. E.g : thibaudlepretre
-  # twitter = "thibaudlepretre"
-  # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
-  # googlePlus = "+ThibaudLepretre"
 
 # Menu Configuration
 [[menu.main]]
@@ -144,7 +138,7 @@ paginate = 10
   # Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`)
   # Set this value to `right` if you have old posts to keep the old style on them
   # and define `thumbnailImagePosition` on a post to overwrite this setting
-  thumbnailImagePosition = "right"
+  thumbnailImagePosition = "left"
   # Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image
   # Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image
   # and set `autoThumbnailImage` to `false` on a post to overwrite this setting
@@ -200,4 +194,4 @@ paginate = 10
 
   # Customize copyright value "© 2017 <CUSTOMIZATION>. All Rights Reserved"
   [params.footer]
-     copyright = "<a href=\"https://github.com/hyunwoo-kr\">hyunwoo</a>"
+    copyright = "<a href=\"https://github.com/hyunwoo-kr\">hyunwoo</a>"
